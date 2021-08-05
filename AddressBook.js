@@ -105,6 +105,18 @@ let viewContactsByState = () => {
         console.log("\nNo contacts found in " + state + " state");
 }
 
+let countByCity = () => {
+    let city = prompt("Enter the name of the city: ");
+    let count = addressbookArray.filter(con => con.city == city).reduce(totalCount => totalCount += 1, 0);
+    console.log("\nThere are " + count + " contacts in " + city + " city");
+}
+
+let countByState = () => {
+    let state = prompt("Enter the name of the state: ");
+    let count = addressbookArray.filter(con => con.state == state).reduce(totalCount => totalCount += 1, 0);
+    console.log("\nThere are " + count + " contacts in " + state + " state");
+}
+
 let editOrAddContact = (contact) => {
     try {
         let firstName = prompt("Enter first name: ");
@@ -138,5 +150,5 @@ let editOrAddContact = (contact) => {
     }
 }
 
-export { addContact, displayContacts, findContactByName, editContactByName, deleteContactByName, countContacts, getContactsByCity, getContactsByState ,viewContactsByCity, viewContactsByState};
+export { addContact, displayContacts, findContactByName, editContactByName, deleteContactByName, countContacts, getContactsByCity, getContactsByState ,viewContactsByCity, viewContactsByState, countByCity, countByState};
 
